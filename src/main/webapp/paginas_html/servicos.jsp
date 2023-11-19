@@ -1,0 +1,374 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empresa de Serviços</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="../assets/css/servicos.css">
+</head>
+
+<body>
+	<!--Início do Header -->
+	<header>
+		<nav class="navbar navbar-expand-sm Navbar">
+			<div class="container-fluid">
+				<a class="navbard-brand" href="#"><img id="logotipo"
+					src="../assets/Img/coopcomunitaria.png" alt="Vogue Agency"></a>
+				<button class="navbar-toggler navbar-light collapsed" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
+					aria-controls="navbar-links" aria-expanded="false"
+					aria-label="toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse justify-content-between"
+					id="collapseNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="../index.jsp">Página inicial</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="sobrenos.jsp">Quem somos</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="servicos.jsp">Serviços</a></li>
+						<li class="nav-item"><a class="nav-link" href="contato.jsp">Contato</a>
+						</li>
+					</ul>
+					<form class="d-flex">
+						<button id="signup-btn" type="button" class="btn btn-primary ml-2">
+							<a href="../cliente">Cadastrar</a>
+						</button>
+						<button class="btn ml-2" type="submit">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+								fill="#4654A3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!--Final do Header -->
+	<!--Início do main - conteúdo principal da página serviços-->
+	<main>
+		<section class="conteudo_principal">
+			<div class="conteudo_principal_escrito">
+				<h1 class="conteudo_principal_titulo">Mercearia</h1>
+			</div>
+		</section>
+		<div class="base_desc">
+			<div class="base_descricao_servicos">
+				<p>As mercearias são um serviço de Venda local e crucial para a
+					saúde e a vibração de uma comunidade. Não só ajuda a manter o
+					dinheiro no próprio local, mas também reduz o impacto ambiental e
+					apoia os pequenos negócios locais, fornecendo trabalhos para a
+					comunidade. Junte- se a nós para o crescimento do seu negócio.</p>
+			</div>
+		</div>
+		<section class="cards-promocoes container py-5">
+
+			<div class="row">
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/mercearia1.jpg" class="card-img-top"
+							alt="Service 2 Image">
+						<div class="card-body">
+							<h5 class="card-title">A Gourmet Market é uma mercearia na
+								sua comunidade que visa levar o consumidor para um mundo de
+								sabores e experiências únicas. Oferecemos uma seleção exclusiva
+								de alimentos importados, produtos gourmet e raros, bem como um
+								pão fresco diário e especialidades caseiras.</h5>
+							<p class="card-text" style="">Serviços: Trabalhamos com
+								delivery</p>
+							<p class="card-text" style="">Telefone: xxxx-xxxx</p>
+							<p class="card-text" style="">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Gourmet Market</span> <a
+								href="#" class="btn btn-primary">Saiba mais</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/mercearia2.webp" class="card-img-top"
+							alt="Service 2 Image">
+						<div class="card-body">
+							<h5 class="card-title">A Mercearia joarez é o coração de
+								qualquer rua. Nosso mercadinho vende tudo o que você precisa
+								produtos de limpeza, produtos de beleza, comida congelada e tudo
+								o que precisa para completar uma compra rápida e prática.</h5>
+							<p class="card-text">serviços: entregamos suas compras a
+								partir de R$ 300,00</p>
+							<p class="card-text">Telefone: xxxx-xxxx</p>
+							<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Mercearia Joarez</span> <a
+								href="#" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/mercearia3.jpg" class="card-img-top"
+							alt="Service 2 Image">
+						<div class="card-body">
+							<h5 class="card-title">A Mercearia bar do Maneco é um
+								mercado-petiscaria incrível! Não só oferecemos uma ampla gama de
+								produtos de mercado como também petiscos gostosos e música ao
+								vivo as sextas feiras. É o local perfeito para um lanche
+								gostoso, uma cerveja gelada e um tempo de qualidade com os
+								amigos. E no final da curtição você ainda leva os produtos que
+								estão faltando em casa.</h5>
+							<p class="card-text" style="color: white;">serviços:
+								Trabalhamos com delivery</p>
+							<p class="card-text" style="">Telefone: xxxx-xxxx</p>
+							<p class="card-text" style="">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Mercearia Bar do
+								Maneco</span> <a href="#" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+		<section class="conteudo_principal container">
+			<div class="conteudo_principal_escrito">
+				<h1 class="conteudo_principal_titulo">Confeitaria</h1>
+			</div>
+		</section>
+		<div class="base_desc container">
+			<div class="base_descricao_servicos">
+				<p style="color: white;">O mundo da confeitaria é cheio de
+					possibilidades deliciosas! Então junte-se a coopcomunitária e
+					ampliem os seus conhecimentos. Com o nossa apoio aprenda novas
+					tendências, técnicas avançadas e ideias inovadoras.</p>
+			</div>
+		</div>
+		<section class="cards-promocoes container py-5">
+
+			<div class="row">
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/confeitaria1.webp" class="card-img-top"
+							alt="Service 2 Image">
+						<div class="card-body">
+
+							<h5 class="card-title">A doceria da Ane é uma doceria da
+								comunidade xxx que busca alegrar o dia através de uma pitada de
+								açúcar e muito sabor</h5>
+							<p class="card-text">Preço: Bolo Pequeno: A partir de
+								R$25.00/ Bolo médio: A partir de R$40,00</p>
+							<p class="card-text">Telefone: xxxx-xxxx</p>
+							<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Doceria da Ane</span> <a
+								href="#" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/confeitaria2.jpg" class="card-img-top"
+							alt="Service 2 Image">
+						<div class="card-body">
+							<h5 class="card-title">A doceria da Maria é um lugar onde
+								encontra-se doces deliciosos e acolhedores. Oferecemos todos os
+								tipos de doces, desde bolos até brigadeiros, além de uma
+								variedade de recheios e decorações incríveis.</h5>
+							<p class="card-text">Preços: Bolo a partir de R$300,00.
+								Conslte o valor dos demais serviços com a fornecedora.</p>
+							<p class="card-text">Telefone: xxxx-xxxx</p>
+							<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Doceria da Maria</span> <a
+								href="#" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-items-stretch">
+					<div class="card mb-4 w-100">
+						<img src="../assets/Img/20221103_mae_solo.webp"
+							class="card-img-top" alt="Service 2 Image">
+						<div class="card-body">
+							<h5 class="card-title">Doces da Drika é onde o amor e a
+								deliciosidade se encontram! Nossa doceria é a casa dos doces
+								mais saborosos, artísticos e excêntricos do bairro. Você pode
+								escolher de uma vasta seleção de doces e bolos, desde tartas até
+								mousse. Estamos sempre criando novidades que alegram seu dia</h5>
+							<p class="card-text">Preços: Produtos a partir de 5,00.
+								Trabalhamos com buffet.</p>
+							<p class="card-text">Telefone: xxxx-xxxx</p>
+							<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+							<span class="conteudo-sobre-imagem"> Doceria da Drika</span> <a
+								href="#" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="cards-promocoes">
+
+			</div>
+			<section class="conteudo_principal">
+				<div class="conteudo_principal_escrito">
+					<h1 class="conteudo_principal_titulo" style="font-weight: bold;">Construção
+						Civil</h1>
+				</div>
+			</section>
+
+			<div class="base_desc ">
+				<div class="base_descricao_servicos">
+					<p style="color: white;">A construção civil é uma área criativa
+						e desafiadora! Acompanhe nossas oportunidade de crescimento e
+						explore tudo, desde cursos voltados para área a Network para
+						alcançar novos projetos de construção.</p>
+				</div>
+			</div>
+			<div class="spacer"></div>
+			<section class="cards-promocoes container py-5">
+
+				<div class="row">
+					<div class="col-md-4 d-flex align-items-stretch">
+						<div class="card mb-4 w-100">
+							<img src="../assets/Img/negócio-no-ramo-da-construção.jpg.webp"
+								class="card-img-top" alt="Service 2 Image">
+							<div class="card-body">
+
+								<h5 class="card-title">JRA construções é conhecida pela sua
+									qualidade e profissionalismo. Oferecemos uma gama completa de
+									serviços de construção, incluindo reformas, construções de
+									casas e empreendimentos comerciais. Nossa equipe especializada
+									e atenciosa garante resultados de qualidade e um serviço
+									incrível.</h5>
+								<p class="card-text">
+									serviços: Faça um orçamento conosco.<br> Orçamento
+									gratuito
+								</p>
+								<p class="card-text">Telefone: xxxx-xxxx</p>
+								<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+								<span class="conteudo-sobre-imagem"> JRA construções</span> <a
+									href="#" class="btn btn-primary">Saiba mais</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 d-flex align-items-stretch">
+						<div class="card mb-4 w-100">
+							<img src="../assets/Img/istockphoto-1354891373-612x612.jpg"
+								class="card-img-top" alt="Service 2 Image">
+							<div class="card-body">
+								<h5 class="card-title">A cursos comunidade oferece cursos
+									especializados, acessíveis e práticos para profissionais da
+									construção. Nosso currículo inclui disciplinas como estruturas
+									de concreto armado, sistemas elétricos, instalações plásticas e
+									muito mais.</h5>
+								<p class="card-text">serviços: Cursos a partir de 156,00</p>
+								<p class="card-text">Telefone: xxxx-xxxx</p>
+								<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+								<span class="conteudo-sobre-imagem"> Cursos Comunidade</span> <a
+									href="#" class="btn btn-primary">Saiba mais</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 d-flex align-items-stretch">
+						<div class="card mb-4 w-100">
+							<img src="../assets/Img/construcao_3.jpg" class="card-img-top"
+								alt="Service 2 Image">
+							<div class="card-body">
+								<h5 class="card-title">A Fabiana é design de interiores e é
+									conhecida pelas suas criações inovadoras, funcionais e
+									estéticas. Deixe a sua casa ou seu local de trabalho
+									confortável estilosos e único.</h5>
+								<p class="card-text">serviços: Faça um orçamento gratuito.</p>
+								<p class="card-text">Telefone: xxxx-xxxx</p>
+								<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
+								<span class="conteudo-sobre-imagem"> Fabiana: Design de
+									Interiores</span> <a href="#" class="btn btn-primary">Saiba mais</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+	</main>
+	<!--Final do main - conteúdo principal da página serviços-->
+	<!--Início do rodapé das páginas-->
+	<!--Início do rodapé das páginas-->
+	<!--Final da parte principal que exibe as tabelas para o usuário -->
+	<footer>
+		<div id="footer_content">
+			<div id="footer_contacts">
+				<div id="central_logo">
+					<a href="#" class="logo"> <img class="cabecalho_logo"
+						src="../assets/Img/coopcomunitaria.png" alt="Logo da Vogue">
+					</a>
+				</div>
+				<div id="footer_social_media">
+					<a href="#" class="footer_link" id="instagram"><i
+						class="fa-brands fa-instagram"></i></a> <a href="#"
+						class="footer_link" id="facebook"><i
+						class="fa-brands fa-facebook-f"></i></a> <a href="#"
+						class="footer_link" id="whatsapp"><i
+						class="fa-brands fa-whatsapp"></i></a>
+				</div>
+			</div>
+			<ul class="footer_list">
+				<li><h3>Mais populares</h3></li>
+				<li><a href="#" class="footer_link">Confeitaria</a></li>
+				<li><a href="#" class="footer_link">Construção Civil</a></li>
+				<li><a href="#" class="footer_link">Merceria</a></li>
+			</ul>
+
+			<ul class="footer_list">
+				<li><h3>Serviços</h3></li>
+				<li><a href="#" class="footer_link">Mercearia</a></li>
+				<li><a href="#" class="footer_link">Construção civil</a></li>
+				<li><a href="#" class="footer_link">Confeitaria</a></li>
+			</ul>
+
+			<div id="footer_subscribe">
+				<h2>Inscreva-se</h2>
+				<p>Digite seu email para receber nossas novidades e ofertas de
+					serviços</p>
+				<div id="input_group">
+					<input type="email" id="email">
+					<button>
+						<i class="fa-regular fa-envelope"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer_copyright">&#169 Squad 30 - RecodePro</div>
+	</footer>
+	<!--Final do rodapé das páginas-->
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+</html>

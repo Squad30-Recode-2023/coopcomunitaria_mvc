@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -18,100 +17,113 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
 	rel="stylesheet">
-<title>Agência | Passagens</title>
+<link rel="stylesheet" type="text/css" href="assets/css/inicial.css">
+<title>Coopcomunitaria | Empresa</title>
 </head>
 <body>
 	<main>
-<!--Início do Menu com acesso para as guias do site-->
+		<!--Início do Menu com acesso para as guias do site-->
 		<header>
 			<nav class="navbar navbar-expand-sm Navbar">
 				<div class="container-fluid">
-					<a class="navbard-brand" href="#"><img id="logo"
-						src="assets/images/logo_nav.png" alt="Vogue Agency"></a>
+					<a class="navbard-brand" href="#"><img id="logotipo"
+						src="assets/Img/coopcomunitaria.png" alt="Vogue Agency"></a>
 					<button class="navbar-toggler navbar-light collapsed" type="button"
 						data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
 						aria-controls="navbar-links" aria-expanded="false"
 						aria-label="toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<div class="navbar-collapse" id="collapseNavbar">
+					<div class="navbar-collapse justify-content-between"
+						id="collapseNavbar">
 						<ul class="navbar-nav">
-							<li class="nav-item"><a class="nav-link text-black"
-								href="index.jsp">Home</a></li>
-							<li class="nav-item"><a class="nav-link text-black"
-								href="paginashtml/destino.jsp">Destino</a></li>
-							<li class="nav-item"><a class="nav-link text-black"
-								href="paginashtml/promocoes.jsp">Promoções</a></li>
-							<li class="nav-item"><a class="nav-link text-black"
-								href="paginashtml/contato.jsp">Contato</a></li>
-							<li class="nav-item_2"><a class="nav-link text-black"
-								href="./cliente">Cadastrar-se</a></li>
-							<li class="nav-item_3"><a class="nav-link text-black"
-								href="paginashtml/login.jsp">Login</a></li>
+							<li class="nav-item"><a class="nav-link active"
+								aria-current="page" href="index.jsp">Página inicial</a></li>
+							<li class="nav-item"><a class="nav-link active"
+								aria-current="page" href="paginas_html/sobrenos.jsp">Quem
+									somos</a></li>
+							<li class="nav-item"><a class="nav-link active"
+								aria-current="page" href="paginas_html/servicos.jsp">Serviços</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="paginas_html/contato.jsp">Contato</a></li>
 						</ul>
+						<form class="d-flex">
+							<button id="signup-btn" type="button"
+								class="btn btn-primary ml-2">
+								<a href="cliente">Cadastrar</a>
+							</button>
+							<button class="btn ml-2" type="submit">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+									fill="#4654A3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+										d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+							</button>
+						</form>
 					</div>
 				</div>
 			</nav>
 		</header>
-<!--Final do Menu com acesso para as guias do site-->
-<!--Início da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
-<section>
-		<nav class="navbar navbar-expand-sm Navbar">
-			<div class="container-fluid">
+		<!--Final do Menu com acesso para as guias do site-->
+		<!--Início da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
 
-				<button class="navbar-toggler navbar-light collapsed" type="button"
-					data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
-					aria-controls="navbar-links" aria-expanded="false"
-					aria-label="toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div style="text-align: center;">
-					<div class="navbar-collapse" id="collapseNavbar">
-						<ul class="navbar-nav">
-							<li class="nav-item4"><a class="nav-link text-white"
-								href="./compra" style="color: white;">Cadastro compra</a></li>
-							<li class="nav-item5"><a class="nav-link text-white"
-								href="./passagem" style="color: white;">Cadastro Passagem</a></li>
-							<li class="nav-item_6"><a class="nav-link text-white"
-								href="./cliente" style="color: white;">Cadastro cliente</a></li>
-						</ul>
+		<section>
+			<nav class="navbar navbar-expand-sm Navbar">
+				<div class="container-fluid">
+					<button class="navbar-toggler navbar-light collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
+						aria-controls="navbar-links" aria-expanded="false"
+						aria-label="toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div style="text-align: center;">
+						<div class="navbar-collapse" id="collapseNavbar">
+							<ul class="navbar-nav">
+								<li class="nav-item4"><a class="nav-link text-black"
+									href="./servico" style="color: white;">Cadastro Serviço</a></li>
+								<li class="nav-item5"><a class="nav-link text-black"
+									href="./empresa" style="color: white;">Cadastro Empresa</a></li>
+								<li class="nav-item_6"><a class="nav-link text-black"
+									href="./cliente" style="color: white;">Cadastro cliente</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
-		</nav>
-</section>
-<!--Final da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
-<!--Início da parte principal que exibe as tabelas para o usuário -->
+			</nav>
+		</section>
+		<!--Final da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
+		<!--Início da parte principal que exibe as tabelas para o usuário -->
 		<div class="p-4">
 			<a href="./views/empresa/cadastrarEmpresa.jsp"
-				class="btn btn-primary mb-2 botao1"> Nova passagem </a>
+				class="btn btn-primary mb-2 botao1"> Nova empresa </a>
 			<table class="table table-responsive table-hover">
 				<thead class="table-dark">
 					<tr>
 						<th scope="col" style="color: #ffffff;">id</th>
 						<th scope="col" style="color: #ffffff;">Nome</th>
 						<th scope="col" style="color: #ffffff;">Codigo Cadastro</th>
-						<th scope="col" style="color: #ffffff;">Telefone </th>
+						<th scope="col" style="color: #ffffff;">Telefone</th>
 						<th scope="col" style="color: #ffffff;">Email</th>
-						<th scope="col" style="color: #ffffff;">Senha</th>
 						<th scope="col" style="color: #ffffff;">Ações</th>
-					</tr>	
+					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${listaEmpresas}" var="e">
 						<tr>
-							<td style="color: red; background-color: white">${e.id_empresa}</td>
-							<td style="color: red; background-color: white">${e.nome_empresa}</td>
-							<td style="color: red; background-color: white">${e.codigo_cadastro}</td>
-							<td style="color: red; background-color: white">${e.telefone_empresa}</td>
-							<td style="color: red; background-color: white">${e.email_empresa}</td>
-							<td style="color: red; background-color: white">${e.senha}</td>
-							<td style="color: red; background-color: white">
+							<td style="color: #4654A3; background-color: white">${e.id_empresa}</td>
+							<td style="color: #4654A3; background-color: white">${e.nome_empresa}</td>
+							<td style="color: #4654A3; background-color: white">${e.codigo_cadastro}</td>
+							<td style="color: #4654A3; background-color: white">${e.telefone_empresa}</td>
+							<td style="color: #4654A3; background-color: white">${e.email_empresa}</td>
+							<td style="color: #4654A3; background-color: white">
 								<div class="d-flex">
-									<a href="empresa-edit?id_empresa=${e.id_empresa}"
-										class="mx-1" title="Editar"> <i class="ri-file-edit-line"></i>
+									<a href="empresa-edit?id_empresa=${e.id_empresa}" class="mx-1"
+										title="Editar"> <i class="ri-file-edit-line"></i>
 									</a> <a href="empresa-delete?id_empresa=${e.id_empresa}"
-										class="mx-1" title="Cancelar"
-										onclick="return confirm('Deseja excluir a empresa para ${e.nome_empresa}?')">
+										class="mx-1" title="Deletar"
+										onclick="return confirm('Deseja excluir a empresa ${e.nome_empresa}?')">
 										<i class="ri-delete-bin-2-line"></i>
 									</a>
 								</div>
@@ -122,44 +134,42 @@
 			</table>
 		</div>
 	</main>
-<!--Final da parte principal que exibe as tabelas para o usuário -->
-<!--Início do footer da página -->
+	<!--Final da parte principal que exibe as tabelas para o usuário -->
 	<footer>
 		<div id="footer_content">
 			<div id="footer_contacts">
-				<a href="#" class="logo"> <img class="cabecalho_logo"
-					src="./assets/images/logo_nav.png" alt="Logo da Vogue">
-				</a>
-				<p>A empresa para realizar seus sonhos com a melhor experiência</p>
-				<div id="footer_social_media">
-					<a href="#" class="footer_link" id="instagram"> <i
-						class="fa-brands fa-instagram"></i>
-					</a> <a href="#" class="footer_link" id="facebook"> <i
-						class="fa-brands fa-facebook-f"></i>
-					</a> <a href="#" class="footer_link" id="whatsapp"> <i
-						class="fa-brands fa-whatsapp"></i>
+				<div id="central_logo">
+					<a href="#" class="logo"> <img class="cabecalho_logo"
+						src="assets/Img/coopcomunitaria.png" alt="Logo da Vogue">
 					</a>
+				</div>
+				<div id="footer_social_media">
+					<a href="#" class="footer_link" id="instagram"><i
+						class="fa-brands fa-instagram"></i></a> <a href="#"
+						class="footer_link" id="facebook"><i
+						class="fa-brands fa-facebook-f"></i></a> <a href="#"
+						class="footer_link" id="whatsapp"><i
+						class="fa-brands fa-whatsapp"></i></a>
 				</div>
 			</div>
 			<ul class="footer_list">
-				<li>
-					<h3>Categorias de viagens</h3>
-				</li>
-				<li><a href="#" class="footer_link">Ecoturismo</a></li>
-				<li><a href="#" class="footer_link">Cidades paradisíacas</a></li>
-				<li><a href="#" class="footer_link">Cidades Históricas</a></li>
+				<li><h3>Mais populares</h3></li>
+				<li><a href="#" class="footer_link">Confeitaria</a></li>
+				<li><a href="#" class="footer_link">Construção Civil</a></li>
+				<li><a href="#" class="footer_link">Merceria</a></li>
 			</ul>
+
 			<ul class="footer_list">
-				<li>
-					<h3>Produtos</h3>
-				</li>
-				<li><a href="#" class="footer_link">Aluguel de carros</a></li>
-				<li><a href="#" class="footer_link">Shows</a></li>
-				<li><a href="#" class="footer_link">Hospedagem</a></li>
+				<li><h3>Serviços</h3></li>
+				<li><a href="#" class="footer_link">Mercearia</a></li>
+				<li><a href="#" class="footer_link">Construção civil</a></li>
+				<li><a href="#" class="footer_link">Confeitaria</a></li>
 			</ul>
+
 			<div id="footer_subscribe">
 				<h2>Inscreva-se</h2>
-				<p>Digite seu email para receber nossas promoções de viagem</p>
+				<p>Digite seu email para receber nossas novidades e ofertas de
+					serviços</p>
 				<div id="input_group">
 					<input type="email" id="email">
 					<button>
@@ -168,9 +178,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="footer_copyright">&#169 2023</div>
+		<div id="footer_copyright">&#169 Squad 30 - RecodePro</div>
 	</footer>
-<!--Final do footer da página -->
+	<!--Final do rodapé das páginas-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 	<script
