@@ -21,111 +21,111 @@
 <title>Coopcomunitaria | Clientes</title>
 </head>
 <body>
-<!--Início do Menu com acesso para as guias do site-->
+	<!--Início do Menu com acesso para as guias do site-->
 	<header>
 		<nav class="navbar navbar-expand-sm Navbar">
-        <div class="container-fluid">
-            <a class="navbard-brand" href="#"><img id="logotipo" src="assets/Img/coopcomunitaria.png" alt="Vogue Agency"></a>
-            <button class="navbar-toggler navbar-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar" aria-controls="navbar-links" aria-expanded="false" aria-label="toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse justify-content-between" id="collapseNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="index.jsp">Página inicial</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="paginas_html/sobrenos.jsp">Quem somos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="paginas_html/servicos.jsp">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="paginas_html/contato.jsp">Contato</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button id="signup-btn" type="button" class="btn btn-primary ml-2"><a href="cliente">Cadastrar</a></button>
-                    <button class="btn ml-2" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#4654A3" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </nav>
-	</header>
-	<!--Final do Menu com acesso para as guias do site-->
-	<!--Início da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
-	<section>
-		<nav class="navbar navbar-expand-sm Navbar">
 			<div class="container-fluid">
+				<a class="navbard-brand" href="#"><img id="logotipo"
+					src="assets/Img/coopcomunitaria.png" alt="Vogue Agency"></a>
 				<button class="navbar-toggler navbar-light collapsed" type="button"
 					data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
 					aria-controls="navbar-links" aria-expanded="false"
 					aria-label="toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div style="text-align: center;">
-					<div class="navbar-collapse" id="collapseNavbar">
-						<ul class="navbar-nav">
-							<li class="nav-item4"><a class="nav-link text-black"
-								href="./servico" style="color: white;">Cadastro Serviço</a></li>
-							<li class="nav-item5"><a class="nav-link text-black"
-								href="./empresa" style="color: white;">Cadastro Empresa</a></li>
-							<li class="nav-item_6"><a class="nav-link text-black"
-								href="./cliente" style="color: white;">Cadastro cliente</a></li>
-						</ul>
-					</div>
+				<div class="navbar-collapse justify-content-between"
+					id="collapseNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="index.jsp">Página inicial</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="paginas_html/sobrenos.jsp">Quem
+								somos</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="paginas_html/servicos.jsp">Serviços</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+							href="paginas_html/contato.jsp">Contato</a></li>
+					</ul>
+					<form class="d-flex">
+						<button id="signup-btn" type="button" class="btn btn-primary ml-2">
+							<a href="cliente">Cadastrar</a>
+						</button>
+						<button class="btn ml-2" type="submit">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+								fill="#4654A3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!--Final do Menu com acesso para as guias do site-->
+	<!--Início da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
+	<section>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-collapse">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./servico" style="color: white;">Cadastro Serviço</a></li>
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./empresa" style="color: white;">Cadastro Empresa</a></li>
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./cliente" style="color: white;">Cadastro Cliente</a></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
 	</section>
 	<!--Final da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
 	<!--Início da parte principal que exibe as tabelas para o usuário -->
-	
-	<main>
-		<div class="p-4">
-			<a href="./views/cliente/cadastrarCliente.jsp"
-				class="btn btn-primary mb-2 botao1"> Novo Cliente </a>
-			<table class="table table-responsive table-hover">
-				<thead class="table-dark">
-					<tr>
-						<th scope="col" style="color: #ffffff;">Id</th>
-						<th scope="col" style="color: #ffffff;">CPF</th>
-						<th scope="col" style="color: #ffffff;">Nome</th>
-						<th scope="col" style="color: #ffffff;">Telefone</th>
-						<th scope="col" style="color: #ffffff;">E-mail</th>
-						<th scope="col" style="color: #ffffff;">Ações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${listaClientes}" var="u">
-						<tr>
-							<td style="color: #4654A3; background-color: white">${u.id_cliente}</td>
-							<td style="color: #4654A3; background-color: white">${u.cpf}</td>
-							<td style="color: #4654A3; background-color: white">${u.nome_cliente}</td>
-							<td style="color: #4654A3; background-color: white">${u.telefone_cliente}</td>
-							<td style="color: #4654A3; background-color: white">${u.email_cliente}</td>
-							<td style="background-color: white;">
-								<div class="d-flex">
-									<a href="cliente-edit?id_cliente=${u.id_cliente}" class="mx-1"
-										title="Editar"> <i class="ri-file-edit-line"></i>
-									</a> <a href="cliente-delete?id_cliente=${u.id_cliente}"
-										class="mx-1" title="Deletar"
-										onclick="return confirm('Deseja excluir ${u.nome_cliente}?')"> <i
-										class="ri-delete-bin-2-line"></i>
-									</a>
-								</div>
-							</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-	</main>
+
+<main>
+    <div class="p-4">
+        <a href="./views/cliente/cadastrarCliente.jsp" class="btn btn-primary mb-2 botao1">Novo Cliente</a>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${listaClientes}" var="u">
+                        <tr>
+                            <td style="color: #4654A3; background-color: white">${u.id_cliente}</td>
+                            <td style="color: #4654A3; background-color: white">${u.cpf}</td>
+                            <td style="color: #4654A3; background-color: white">${u.nome_cliente}</td>
+                            <td style="color: #4654A3; background-color: white">${u.telefone_cliente}</td>
+                            <td style="color: #4654A3; background-color: white">${u.email_cliente}</td>
+                            <td style="color: #4654A3; background-color: white">
+                                <div class="d-flex">
+                                    <a href="cliente-edit?id_cliente=${u.id_cliente}" class="mx-1" title="Editar">
+                                        <i class="ri-file-edit-line"></i>
+                                    </a>
+                                    <a href="cliente-delete?id_cliente=${u.id_cliente}" class="mx-1" title="Deletar"
+                                        onclick="return confirm('Deseja excluir ${u.nome_cliente}?')">
+                                        <i class="ri-delete-bin-2-line"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
 	<!--Final da parte principal que exibe as tabelas para o usuário -->
 	<footer>
 		<div id="footer_content">

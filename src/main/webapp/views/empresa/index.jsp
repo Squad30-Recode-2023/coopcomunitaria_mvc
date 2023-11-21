@@ -69,69 +69,63 @@
 		<!--Final do Menu com acesso para as guias do site-->
 		<!--Início da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
 
-		<section>
-			<nav class="navbar navbar-expand-sm Navbar">
-				<div class="container-fluid">
-					<button class="navbar-toggler navbar-light collapsed" type="button"
-						data-bs-toggle="collapse" data-bs-target="#collapseNavbar"
-						aria-controls="navbar-links" aria-expanded="false"
-						aria-label="toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div style="text-align: center;">
-						<div class="navbar-collapse" id="collapseNavbar">
-							<ul class="navbar-nav">
-								<li class="nav-item4"><a class="nav-link text-black"
-									href="./servico" style="color: white;">Cadastro Serviço</a></li>
-								<li class="nav-item5"><a class="nav-link text-black"
-									href="./empresa" style="color: white;">Cadastro Empresa</a></li>
-								<li class="nav-item_6"><a class="nav-link text-black"
-									href="./cliente" style="color: white;">Cadastro cliente</a></li>
-							</ul>
-						</div>
-					</div>
+	<section>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-collapse">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./servico" style="color: white;">Cadastro Serviço</a></li>
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./empresa" style="color: white;">Cadastro Empresa</a></li>
+						<li class="nav-item"><a class="nav-link text-black"
+							href="./cliente" style="color: white;">Cadastro Cliente</a></li>
+					</ul>
 				</div>
-			</nav>
-		</section>
+			</div>
+		</nav>
+	</section>
 		<!--Final da sessão do menu com o modelo que implementa o CRUD nas tabelas-->
 		<!--Início da parte principal que exibe as tabelas para o usuário -->
 		<div class="p-4">
 			<a href="./views/empresa/cadastrarEmpresa.jsp"
 				class="btn btn-primary mb-2 botao1"> Nova empresa </a>
-			<table class="table table-responsive table-hover">
-				<thead class="table-dark">
-					<tr>
-						<th scope="col" style="color: #ffffff;">id</th>
-						<th scope="col" style="color: #ffffff;">Nome</th>
-						<th scope="col" style="color: #ffffff;">Codigo Cadastro</th>
-						<th scope="col" style="color: #ffffff;">Telefone</th>
-						<th scope="col" style="color: #ffffff;">Email</th>
-						<th scope="col" style="color: #ffffff;">Ações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${listaEmpresas}" var="e">
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead class="table-dark">
 						<tr>
-							<td style="color: #4654A3; background-color: white">${e.id_empresa}</td>
-							<td style="color: #4654A3; background-color: white">${e.nome_empresa}</td>
-							<td style="color: #4654A3; background-color: white">${e.codigo_cadastro}</td>
-							<td style="color: #4654A3; background-color: white">${e.telefone_empresa}</td>
-							<td style="color: #4654A3; background-color: white">${e.email_empresa}</td>
-							<td style="color: #4654A3; background-color: white">
-								<div class="d-flex">
-									<a href="empresa-edit?id_empresa=${e.id_empresa}" class="mx-1"
-										title="Editar"> <i class="ri-file-edit-line"></i>
-									</a> <a href="empresa-delete?id_empresa=${e.id_empresa}"
-										class="mx-1" title="Deletar"
-										onclick="return confirm('Deseja excluir a empresa ${e.nome_empresa}?')">
-										<i class="ri-delete-bin-2-line"></i>
-									</a>
-								</div>
-							</td>
+							<th scope="col" style="color: #ffffff;">id</th>
+							<th scope="col" style="color: #ffffff;">Nome</th>
+							<th scope="col" style="color: #ffffff;">Codigo Cadastro</th>
+							<th scope="col" style="color: #ffffff;">Telefone</th>
+							<th scope="col" style="color: #ffffff;">Email</th>
+							<th scope="col" style="color: #ffffff;">Ações</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<c:forEach items="${listaEmpresas}" var="e">
+							<tr>
+								<td style="color: #4654A3; background-color: white">${e.id_empresa}</td>
+								<td style="color: #4654A3; background-color: white">${e.nome_empresa}</td>
+								<td style="color: #4654A3; background-color: white">${e.codigo_cadastro}</td>
+								<td style="color: #4654A3; background-color: white">${e.telefone_empresa}</td>
+								<td style="color: #4654A3; background-color: white">${e.email_empresa}</td>
+								<td style="color: #4654A3; background-color: white">
+									<div class="d-flex">
+										<a href="empresa-edit?id_empresa=${e.id_empresa}" class="mx-1"
+											title="Editar"> <i class="ri-file-edit-line"></i>
+										</a> <a href="empresa-delete?id_empresa=${e.id_empresa}"
+											class="mx-1" title="Deletar"
+											onclick="return confirm('Deseja excluir a empresa ${e.nome_empresa}?')">
+											<i class="ri-delete-bin-2-line"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</main>
 	<!--Final da parte principal que exibe as tabelas para o usuário -->
