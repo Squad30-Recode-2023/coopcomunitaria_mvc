@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <link rel="stylesheet" href="css/sobrenos.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm Navbar">
+                <div class="container-fluid">
+                    <a class="navbard-brand" href="#"><img id="logotipo" src="./img/coopcomunitaria.png" alt="Vogue Agency"></a>
+                    <button class="navbar-toggler navbar-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar" aria-controls="navbar-links" aria-expanded="false" aria-label="toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse justify-content-between" id="collapseNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="../index.jsp">Página inicial</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="sobrenos.html">Quem somos</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <button id="signup-btn" type="button" class="btn btn-primary ml-2"><a href="cadastros.html">Cadastrar</a></button>
+                            <button class="btn ml-2" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#4654A3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+         </header>
+
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/Control.OSMGeocoder.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="data/coop_comuni_1.js"></script>
+        <script src="data/sede_2.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        L.control.locate().addTo(map);
+        var measureControl = new L.Control.Measure({
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        var overlay_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            opacity: 1.0
+        });
+        overlay_GoogleSatellite_0.addTo(map);
+        map.addLayer(overlay_GoogleSatellite_0);
+        function pop_coop_comuni_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">empresa</th>\
+                        <td>' + (feature.properties['empresa'] !== null ? Autolinker.link(String(feature.properties['empresa'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">serviços</th>\
+                        <td>' + (feature.properties['serviços'] !== null ? Autolinker.link(String(feature.properties['serviços'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">telefone</th>\
+                        <td>' + (feature.properties['telefone'] !== null ? Autolinker.link(String(feature.properties['telefone'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">categoria</th>\
+                        <td>' + (feature.properties['categoria'] !== null ? Autolinker.link(String(feature.properties['categoria'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_coop_comuni_1_0(feature) {
+            switch(String(feature.properties['categoria'])) {
+                case 'Alimentação':
+                    return {
+                pane: 'pane_coop_comuni_1',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/cd9d9071d2f91b2edea0339cc8555e88.svg',
+            iconSize: [22.8, 22.8]
+        }),
+            }
+                    break;
+                case 'Reparos':
+                    return {
+                pane: 'pane_coop_comuni_1',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/f7705a49d9f246d306f49ba766660972.svg',
+            iconSize: [22.8, 22.8]
+        }),
+            }
+                    break;
+                case 'reparos eletricos':
+                    return {
+                pane: 'pane_coop_comuni_1',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/ff1206f9a10b427ba757cd4362a946be.svg',
+            iconSize: [22.8, 22.8]
+        }),
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_coop_comuni_1');
+        map.getPane('pane_coop_comuni_1').style.zmapa = 401;
+        map.getPane('pane_coop_comuni_1').style['mix-blend-mode'] = 'normal';
+        var layer_coop_comuni_1 = new L.geoJson(json_coop_comuni_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_coop_comuni_1',
+            onEachFeature: pop_coop_comuni_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_coop_comuni_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_coop_comuni_1);
+        map.addLayer(layer_coop_comuni_1);
+        function pop_sede_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_sede_2_0() {
+            return {
+                pane: 'pane_sede_2',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/accommodation_house.svg',
+            iconSize: [22.8, 22.8]
+        }),
+            }
+        }
+        map.createPane('pane_sede_2');
+        map.getPane('pane_sede_2').style.zmapa = 402;
+        map.getPane('pane_sede_2').style['mix-blend-mode'] = 'normal';
+        var layer_sede_2 = new L.geoJson(json_sede_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_sede_2',
+            onEachFeature: pop_sede_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_sede_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_sede_2);
+        map.addLayer(layer_sede_2);
+        var osmGeocoder = new L.Control.OSMGeocoder({
+            collapsed: false,
+            position: 'topright',
+            text: 'Search',
+        });
+        osmGeocoder.addTo(map);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/sede_2.png" /> sede': layer_sede_2,'coop_comuni<br /><table><tr><td style="text-align: center;"><img src="legend/coop_comuni_1_Alimentao0.png" /></td><td>Alimentação</td></tr><tr><td style="text-align: center;"><img src="legend/coop_comuni_1_Reparos1.png" /></td><td>Reparos</td></tr><tr><td style="text-align: center;"><img src="legend/coop_comuni_1_reparoseletricos2.png" /></td><td>reparos eletricos</td></tr></table>': layer_coop_comuni_1,"Google Satellite": overlay_GoogleSatellite_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        map.addControl(new L.Control.Search({
+            layer: layer_coop_comuni_1,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'empresa'}));
+        </script>
+    </body>
+</html>

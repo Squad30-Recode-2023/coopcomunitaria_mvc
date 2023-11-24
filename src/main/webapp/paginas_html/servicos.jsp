@@ -116,7 +116,7 @@
 							<p class="card-text">Telefone: xxxx-xxxx</p>
 							<p class="card-text">Endereço: xxxxxx,xxx,xxx,xxx</p>
 							<span class="conteudo-sobre-imagem"> Mercearia Joarez</span> <a
-								href="#" class="btn btn-primary">Saiba mais</a>
+								href="../mapas/mapa.html" class="btn btn-primary">Saiba mais</a>
 						</div>
 					</div>
 				</div>
